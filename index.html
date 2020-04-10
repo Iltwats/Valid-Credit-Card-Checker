@@ -25,7 +25,39 @@
                 <i class="icon ion-md-card"></i> Validate
             </button>
 
+        </form><!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Credit Card Validator</title>
+        <link rel="stylesheet" href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:500,700&amp;display=swap" />
+        <link rel="stylesheet" href="./main.css" />
+    </head>
+
+    <body>
+        <form>
+            <div class="segment">
+                <h1><span style="color: darkblue;">Credit Card Validator</span></h1>
+            </div>
+            <label>
+                <h4><span style="color: darkseagreen;">Credit Card Number:</span></h4>
+                <input type="text" id="CCnumber" value="" maxlength="19" />
+            </label>
+            <div class="segment">
+                <h4><span style="color: darkseagreen;"><output id='output'></output> </span></h4>
+
+            </div>
+            <button class="red" type="button" onclick="userValue()">
+                <i class="icon ion-md-card"></i> Validate
+            </button>
+
         </form>
+        <script src="./main.js"></script>
+    </body>
+
+</html>
+
         <script src="./main.js"></script>
     </body>
 
