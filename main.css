@@ -1,16 +1,23 @@
-body, html {
-  background-color: midnight blue;
+body,
+html {
+  background-color: #E0E0E0;
 }
 
-body, p, input, select, textarea, button {
+body,
+p,
+input,
+select,
+textarea,
+button {
   font-family: "Montserrat", sans-serif;
   letter-spacing: -0.2px;
   font-size: 16px;
 }
 
-div, p {
+div,
+p {
   color: #BABECC;
-  text-shadow: 1px 1px 1px #FFF;
+  text-shadow: 0.51px 0.51px 0.51px;
 }
 
 form {
@@ -24,7 +31,8 @@ form {
   text-align: center;
 }
 
-button, input {
+button,
+input {
   border: 0;
   outline: 0;
   font-size: 16px;
@@ -49,6 +57,7 @@ input {
   appearance: none;
   -webkit-appearance: none;
 }
+
 input:focus {
   box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
 }
@@ -56,20 +65,24 @@ input:focus {
 button {
   color: #61677C;
   font-weight: bold;
-  box-shadow: -5px -5px 20px #FFF, 5px 5px 20px #BABECC;
+  box-shadow: -5px -5px 20px rgb(161, 5, 5), 5px 5px 20px rgb(4, 119, 10);
   transition: all 0.2s ease-in-out;
   cursor: pointer;
   font-weight: 600;
 }
+
 button:hover {
   box-shadow: -2px -2px 5px #FFF, 2px 2px 5px #BABECC;
 }
+
 button:active {
   box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
 }
+
 button .icon {
   margin-right: 8px;
 }
+
 button.unit {
   border-radius: 8px;
   line-height: 0;
@@ -81,9 +94,11 @@ button.unit {
   margin: 0 8px;
   font-size: 19.2px;
 }
+
 button.unit .icon {
   margin-right: 0;
 }
+
 button.red {
   display: block;
   width: 100%;
@@ -95,6 +110,7 @@ button.red {
   align-items: center;
   justify-content: flex-start;
 }
+
 .input-group label {
   margin: 0;
   flex: 1;
