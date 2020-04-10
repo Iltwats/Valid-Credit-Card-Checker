@@ -22,18 +22,20 @@ const mystery5 = [4, 9, 1, 3, 5, 4, 0, 4, 6, 3, 0, 7, 2, 5, 2, 3];
 // An array of all the arrays above
 const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, invalid3, invalid4, invalid5, mystery1, mystery2, mystery3, mystery4, mystery5];
 
-//  Code for html 
-// function userValue() {
-//   let userInput = Number(document.getElementById("CCnumber").value);
-//   validateCred(userInput);
+//  Code for html
+function userValue() {
+  let userInput = Number(document.getElementById("CCnumber").value);
+  //validateCred(userInput);
 
-//   if (userInput === 0) {
-//     document.getElementById('CCnumber').innerHTML = (`Your CC no ${userInput} is valid.`);
-//   } else {
-//     document.getElementById('CCnumber').innerHTML = (`Your CC no ${userInput} is invalid.`);
-//   }
-//   console.log(userInput);
-// }
+  if (validateCred(userInput) === true) {
+    document.getElementById('output').innerHTML = (`Your CC no ${userInput} is valid.`);
+  } else if (validateCred(userInput) === false) {
+    document.getElementById('output').innerHTML = (`Your CC no ${userInput} is invalid.`);
+  } else {
+    console.log(userInput);
+  }
+}
+
 // function to check CC if no is valid or not
 function validateCred(numArr) {
   let total = 0;
@@ -48,9 +50,12 @@ function validateCred(numArr) {
     total += currValue;
   }
 
-  return total % 10 === 0;
+  return total % 10 === 0
 
 }
+
+
+
 
 // Test functions:
 console.log(validateCred(valid1)); // Should print true
@@ -63,6 +68,7 @@ function findInvalidCards(cards) {
     let currCred = cards[i];
     if (!validateCred(currCred)) {
       invalid.push(currCred);
+
     }
   }
 
