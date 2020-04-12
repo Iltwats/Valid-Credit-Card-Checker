@@ -25,7 +25,7 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 //  Code for html
 function userValue() {
   let userInput = Number(document.getElementById("CCnumber").value);
-  //validateCred(userInput);
+  validateCred(userInput);
 
   if (validateCred(userInput) === true) {
     document.getElementById('output').innerHTML = (`Your CC no ${userInput} is valid.`);
