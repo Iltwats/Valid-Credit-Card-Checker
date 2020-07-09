@@ -13,9 +13,9 @@
             <div class="segment">
                 <h1><span style="color: darkblue;">Credit Card Validator</span></h1>
             </div>
-            <label>
+            <label for="CCnumber">
                 <h4><span style="color: darkseagreen;">Credit Card Number:</span></h4>
-                <input type="text" id="CCnumber" value="" maxlength="19" />
+                <input type="text" id="CCnumber" required pattern="[0-9]{14,16}">
             </label>
             <div class="segment">
                 <h4><span style="color: darkseagreen;"><output id='output'></output> </span></h4>
