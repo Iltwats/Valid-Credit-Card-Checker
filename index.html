@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <title>Credit Card Validator</title>
-        <link rel="stylesheet" href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:500,700&amp;display=swap" />
-        <link rel="stylesheet" href="./main.css" />
-    </head>
+<head>
+    <title>Credit Card Validator</title>
+    <link rel="stylesheet" href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:500,700&amp;display=swap" />
+    <link rel="stylesheet" href="./main.css" />
+</head>
 
-    <body>
-        <form>
-            <div class="segment">
-                <h1><span style="color: darkblue;">Credit Card Validator</span></h1>
-            </div>
-            <label for="CCnumber">
-                <h4><span style="color: darkseagreen;">Credit Card Number:</span></h4>
-                <input type="text" id="CCnumber" required pattern="[0-9]{14,16}">
+<body>
+    <form>
+        <div class="segment">
+            <h1><span style="color:#4a148c;">Credit Card Validator</span></h1>
+        </div>
+        <label for="CCnumber">
+                <h4><span style="color: #004c8c;">Credit Card Number:</span></h4>
+                <input type="text" id="CCnumber" required pattern="[0-9]{14,16}" placeholder="Enter your CC Number" maxlength="20">
             </label>
-            <div class="segment">
-                <h4><span style="color: darkseagreen;"><output id='output'></output> </span></h4>
+        <div class="segment">
+            <span style="color: #004c8c;"><output id='output'></output> </span>
 
-            </div>
-            <button class="red" type="button" onclick="userValue()">
+        </div>
+        <button class="red" type="button" onclick="userValue()">
                 <i class="icon ion-md-card"></i> Validate
             </button>
 
-        </form>
-        <script src="./main.js"></script>
-    </body>
+    </form>
+    <script src="./main.js"></script>
+</body>
 
 </html>
