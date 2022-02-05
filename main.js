@@ -1,3 +1,66 @@
+//  Code for html
+function userValue() {
+    let userInput = document.getElementById("CCnumber").value;
+    if (checkInp(userInput)) {
+        let userArray = numberToArray(Number(userInput));
+
+        if (validateCred(userArray) === true) {
+            document.getElementById('output').innerHTML = (`Your CC no ${userInput} is valid.`);
+        } else {
+            document.getElementById('output').innerHTML = (`Your CC no ${userInput} is invalid.`);
+        }
+    }
+}
+
+// function to check if CC no is valid or not, also called Luhn Algorithm
+function validateCred(numArr) {
+    let total = 0;
+    for (let i = numArr.length - 1; i >= 0; i--) {
+        let currValue = numArr[i]
+        if ((numArr.length - 1 - i) % 2 === 1) {
+            currValue *= 2;
+            if (currValue > 9) {
+                currValue -= 9;
+            }
+        }
+        total += currValue;
+    }
+
+    return total % 10 === 0
+
+}
+
+// function to convert input string to number array
+function numberToArray(number) {
+    let array = number.toString().split("") //stringify the number, then make each digit an item in an array
+    return array.map(x => parseInt(x)) //convert all the items back into numbers
+}
+
+// function to check if the input is valid or not
+function checkInp(inputNumber) {
+    let input = inputNumber.toString().trim();
+    console.log(input.length);
+    if (input.length > 0) {
+        var x = parseInt(Number(input))
+        if (isNaN(x)) {
+            alert("Input should contain only numbers");
+            return false;
+        }
+    } else {
+        alert("Input should not be empty");
+        return false;
+    }
+    return true
+}
+
+
+/**
+ * Commented out, uncomment to learn logic by testing
+ * includes test cases and logic to test them
+ */
+
+
+/*
 // All valid credit card numbers
 const valid1 = [4, 5, 3, 9, 6, 7, 7, 9, 0, 8, 0, 1, 6, 8, 0, 8];
 const valid2 = [5, 5, 3, 5, 7, 6, 6, 7, 6, 8, 7, 5, 1, 4, 3, 9];
@@ -21,42 +84,9 @@ const mystery5 = [4, 9, 1, 3, 5, 4, 0, 4, 6, 3, 0, 7, 2, 5, 2, 3];
 
 // An array of all the arrays above
 const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, invalid3, invalid4, invalid5, mystery1, mystery2, mystery3, mystery4, mystery5];
+ */
 
-//  Code for html
-function userValue() {
-  let userInput = Number(document.getElementById("CCnumber").value);
-  validateCred(userInput);
-
-  if (validateCred(userInput) === true) {
-    document.getElementById('output').innerHTML = (`Your CC no ${userInput} is valid.`);
-  } else if (validateCred(userInput) === false) {
-    document.getElementById('output').innerHTML = (`Your CC no ${userInput} is invalid.`);
-  } else {
-    console.log(userInput);
-  }
-}
-
-// function to check CC if no is valid or not
-function validateCred(numArr) {
-  let total = 0;
-  for (let i = numArr.length - 1; i >= 0; i--) {
-    let currValue = numArr[i]
-    if ((numArr.length - 1 - i) % 2 === 1) {
-      currValue *= 2;
-      if (currValue > 9) {
-        currValue -= 9;
-      }
-    }
-    total += currValue;
-  }
-
-  return total % 10 === 0
-
-}
-
-
-
-
+/*
 // Test functions:
 console.log(validateCred(valid1)); // Should print true
 console.log(validateCred(invalid1)); // Should print false
@@ -78,7 +108,6 @@ function findInvalidCards(cards) {
 // Test function
 console.log(findInvalidCards([valid1, valid2, valid3, valid4, valid5])); // Shouldn't print anything
 console.log(findInvalidCards([invalid1, invalid2, invalid3, invalid4, invalid5])); // Should print all of the numbers
-
 console.log(findInvalidCards(batch)); // Test what the mystery numbers are
 
 function idInvalidCardCompanies(invalidBatch) {
@@ -115,3 +144,5 @@ function idInvalidCardCompanies(invalidBatch) {
 console.log(idInvalidCardCompanies([invalid1])); // Should print['visa']
 console.log(idInvalidCardCompanies([invalid2])); // Should print ['mastercard']
 console.log(idInvalidCardCompanies(batch)); // Find out which companies have mailed out invalid cards
+*
+*/
